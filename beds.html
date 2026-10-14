@@ -1,0 +1,106 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bed Selection — SRIT Hostel Booking</title>
+  <meta name="description" content="Select your bed in the chosen hostel room at SRIT">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Sticky Header ───────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="brand-logo">
+        <img src="img/logo.webp" alt="SRIT Logo">
+      </div>
+      <div class="brand-name">
+        Sri Ramakrishna Institute Of Technology
+        <span>Hostel Room Booking System</span>
+      </div>
+    </div>
+
+    <div class="header-user" id="header-user">
+      <div class="user-trigger" id="user-trigger" role="button" tabindex="0" aria-haspopup="true">
+        <div class="user-avatar" id="header-avatar">?</div>
+        <span class="user-name" id="header-user-name">Loading...</span>
+        <span class="user-caret">▼</span>
+      </div>
+      <div class="user-dropdown" role="menu">
+        <button class="dropdown-item" role="menuitem">👤 Profile</button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item logout" id="logout-btn" role="menuitem">🚪 Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Page Body ───────────────────────────────────────────────── -->
+  <main class="page-wrapper">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="dashboard.html">Dashboard</a>
+      <span class="sep">›</span>
+      <a href="rooms.html" id="bc-year">Year</a>
+      <span class="sep">›</span>
+      <span id="bc-room" class="current">Room</span>
+      <span class="sep">›</span>
+      <span class="current">Beds</span>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="rooms.html" class="btn-back">← Back to Rooms</a>
+
+    <h1 class="page-title" id="page-room-title">Select a Bed</h1>
+    <p class="page-subtitle">Click an available (green) bed to begin booking. Occupied beds are greyed out.</p>
+
+    <!-- Bed Tiles (rendered by JS) -->
+    <div id="beds-grid" class="beds-grid"></div>
+
+  </main>
+
+  <!-- ── Booking Confirmation Modal ─────────────────────────────── -->
+  <div class="modal-overlay" id="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+    <div class="modal">
+      <h2 class="modal-title" id="modal-heading">Confirm Booking</h2>
+      <p class="modal-subtitle">Please review your booking details below before confirming.</p>
+
+      <div class="modal-detail-list">
+        <div class="modal-detail">
+          <span class="modal-detail-key">Academic Year</span>
+          <span class="modal-detail-val" id="modal-year">—</span>
+        </div>
+        <div class="modal-detail">
+          <span class="modal-detail-key">Block</span>
+          <span class="modal-detail-val" id="modal-block">—</span>
+        </div>
+        <div class="modal-detail">
+          <span class="modal-detail-key">Room Number</span>
+          <span class="modal-detail-val" id="modal-room">—</span>
+        </div>
+        <div class="modal-detail">
+          <span class="modal-detail-key">Bed Number</span>
+          <span class="modal-detail-val" id="modal-bed">—</span>
+        </div>
+        <div class="modal-detail">
+          <span class="modal-detail-key">Student Name</span>
+          <span class="modal-detail-val" id="modal-student">—</span>
+        </div>
+        <div class="modal-detail">
+          <span class="modal-detail-key">Roll Number</span>
+          <span class="modal-detail-val" id="modal-roll">—</span>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-confirm" id="modal-confirm">✅ Confirm Booking</button>
+        <button class="btn-cancel"  id="modal-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

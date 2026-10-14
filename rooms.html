@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Selection — SRIT Hostel Booking</title>
+  <meta name="description" content="Browse and select available hostel rooms at SRIT">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Sticky Header ───────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="brand-logo">
+        <img src="img/logo.webp" alt="SRIT Logo">
+      </div>
+      <div class="brand-name">
+        Sri Ramakrishna Institute Of Technology
+        <span>Hostel Room Booking System</span>
+      </div>
+    </div>
+
+    <div class="header-user" id="header-user">
+      <div class="user-trigger" id="user-trigger" role="button" tabindex="0" aria-haspopup="true">
+        <div class="user-avatar" id="header-avatar">?</div>
+        <span class="user-name" id="header-user-name">Loading...</span>
+        <span class="user-caret">▼</span>
+      </div>
+      <div class="user-dropdown" role="menu">
+        <button class="dropdown-item" role="menuitem">👤 Profile</button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item logout" id="logout-btn" role="menuitem">🚪 Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Page Body ───────────────────────────────────────────────── -->
+  <main class="page-wrapper">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="dashboard.html">Dashboard</a>
+      <span class="sep">›</span>
+      <span id="bc-year" class="current">Year</span>
+      <span class="sep">›</span>
+      <span class="current">Rooms</span>
+    </nav>
+
+    <!-- Back Button -->
+    <a href="dashboard.html" class="btn-back">← Back to Dashboard</a>
+
+    <h1 class="page-title" id="page-year-title">Rooms</h1>
+    <p class="page-subtitle">Click an available room to select your bed. Rooms with red borders are fully occupied.</p>
+
+    <!-- Legend -->
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;font-size:13px;font-weight:500;color:var(--text-muted)">
+      <span style="display:flex;align-items:center;gap:6px">
+        <span style="width:14px;height:14px;border-radius:3px;background:var(--success);display:inline-block"></span>
+        Available beds
+      </span>
+      <span style="display:flex;align-items:center;gap:6px">
+        <span style="width:14px;height:14px;border-radius:3px;background:var(--danger);display:inline-block"></span>
+        Fully occupied
+      </span>
+    </div>
+
+    <!-- Room Cards (rendered by JS) -->
+    <div id="rooms-grid" class="rooms-grid"></div>
+
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

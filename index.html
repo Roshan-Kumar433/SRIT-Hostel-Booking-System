@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — SRIT Hostel Booking</title>
+  <meta name="description" content="Login to the Sri Ramakrishna Institute of Technology Hostel Room Booking System">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="login-page">
+    <div class="login-card">
+
+      <!-- Logo & College Name -->
+      <div class="login-logo">
+        <div class="login-logo-icon">
+          <!-- Building / College SVG Icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white">
+            <path d="M3 9.5L12 3l9 6.5V21H3V9.5zM12 5.5L5 10.3V19h4v-5h6v5h4V10.3L12 5.5zM10 14h4v5h-4v-5z"/>
+          </svg>
+        </div>
+        <div class="login-logo-text">
+          <h1>Sri Ramakrishna Institute Of Technology</h1>
+          <p>Hostel Room Booking System</p>
+        </div>
+      </div>
+
+      <h2 class="login-heading">Welcome Back</h2>
+      <p class="login-subheading">Sign in to book your hostel room</p>
+
+      <!-- Role Toggle -->
+      <div class="role-toggle" role="group" aria-label="Select role">
+        <input type="radio" name="role" id="role-student" value="student" checked>
+        <label for="role-student">🎓 Student</label>
+        <input type="radio" name="role" id="role-admin" value="admin">
+        <label for="role-admin">🛡️ Admin</label>
+      </div>
+
+      <!-- Error Box -->
+      <div id="login-error" class="login-error" role="alert"></div>
+
+      <!-- Login Form -->
+      <form id="login-form" novalidate>
+        <div class="form-field">
+          <label for="login-id">Roll Number / Email</label>
+          <input type="text" id="login-id" placeholder="e.g. 21CS001 or name@srit.ac.in" autocomplete="username" required>
+        </div>
+        <div class="form-field">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="Enter your password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn-login">Sign In →</button>
+      </form>
+
+      <!-- Demo Hint -->
+      <div class="demo-hint">
+        <strong>Demo:</strong> Enter any Roll Number (e.g. <code>21CS001</code>) and any password (min 4 chars) to log in as a Student.
+      </div>
+
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
